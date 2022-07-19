@@ -22,5 +22,11 @@ pipeline {
             }
         }
         
+        stage('KATALON TEST') {
+            steps {
+                sh './jenkins/scripts/katalon.sh'
+            }
+        }
+        
     }
 }

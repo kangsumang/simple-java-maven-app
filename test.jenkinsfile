@@ -22,16 +22,18 @@ pipeline {
             }
         }
         
-        stage('KATALON TEST') {
+        stage('KATALON Query') {
             steps {
                 sh './jenkins/scripts/katalon.sh'
             }
         }
         
-        stage("Build Remote") {
+        stage('Test') {
             steps {
-                build job: 'boolPipeline', parameters: [[$class: 'BooleanParameterValue', name: 'myBoolean', value: true]]
+                dir('/Users/erickasumang/Downloads/kse'){
+                    sh 'docker run -t --rm -v $(pwd)/SampleProject:/katalon/katalon/source katalonstudio/katalon katalon-execute.sh -browserType="Chrome" -retry=0 -statusDelay=15 -testSuitePath="Test Suites/New Test Suite" -apiKey="17357865-c27e-4dae-8fed-dbc6db9d2781"'
                 }
+            }
         }
         
     }

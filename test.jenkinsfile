@@ -30,7 +30,7 @@ pipeline {
         
         stage('Test K') {
             steps {
-                dir('/Users/erickasumang/Downloads/kse'){
+                dir('/home/Katalon_Studio_Engine_Linux_64-8.4.0'){
                     sh 'docker run -t --rm -v $(pwd)/SampleProject:/katalon/katalon/source katalonstudio/katalon katalon-execute.sh -browserType="Chrome" -retry=0 -statusDelay=15 -testSuitePath="Test Suites/New Test Suite" -apiKey="17357865-c27e-4dae-8fed-dbc6db9d2781"'
                 }
             }

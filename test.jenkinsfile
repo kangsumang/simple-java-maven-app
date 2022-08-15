@@ -23,13 +23,15 @@ pipeline {
         }
         
         stage('Build') {
-            script {
-                GIT_BRANCH = sh(returnStdout: true, script: "git rev-parse --abbrev-ref HEAD").trim()
-                GIT_HASH = sh(returnStdout: true, script: "git rev-parse --short HEAD").trim()
+            steps {
+                script {
+                    GIT_BRANCH = sh(returnStdout: true, script: "git rev-parse --abbrev-ref HEAD").trim()
+                    GIT_HASH = sh(returnStdout: true, script: "git rev-parse --short HEAD").trim()
+                }
+                    echo "branch is: ${GIT_BRANCH}"
+                    echo "hash is: ${GIT_HASH}"
+            }
         }
-            echo "branch is: ${GIT_BRANCH}"
-            echo "hash is: ${GIT_HASH}"
-    }
         
         stage('KATALON Query') {
             steps {

@@ -31,7 +31,7 @@ pipeline {
                     GIT_HASH = sh(returnStdout: true, script: "git rev-parse --short HEAD").trim()
                 }
                     echo "branch is: ${GIT_BRANCH}"
-                    echo "hash is: ${GIT_HASH}"
+                    //echo "hash is: ${GIT_HASH}"
             }
         }
         

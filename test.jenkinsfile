@@ -1,4 +1,4 @@
-def git_hash = env.GIT_HASH
+def GIT_HASH = env.GIT_HASH
 
 pipeline {
     agent any
@@ -37,7 +37,7 @@ pipeline {
         
         stage('Trial 2') {
             steps {
-             echo ${git_hash}
+             echo ${GIT_HASH}
             }
         }
         

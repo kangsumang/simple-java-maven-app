@@ -22,7 +22,7 @@ pipeline {
             }
         }
         
-        stage('Build') {
+        stage('Trial') {
             steps {
                 script {
                     GIT_BRANCH = sh(returnStdout: true, script: "git rev-parse --abbrev-ref HEAD").trim()

@@ -1,4 +1,4 @@
-def GIT_HASH = env.GIT_HASH
+//def GIT_HASH = env.GIT_HASH
 
 pipeline {
     agent any

@@ -37,7 +37,7 @@ pipeline {
         
         stage('Trial 2') {
             steps {
-             echo ${GIT_HASH}
+             echo "${GIT_HASH}"
             }
         }
         
